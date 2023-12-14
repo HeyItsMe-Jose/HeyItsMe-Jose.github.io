@@ -1,5 +1,6 @@
 body {
-    background-color: red;
+    background-color: rgb(59, 59, 124);
+    background-clip: content-box; 
   }
   
   h1 {
@@ -12,3 +13,7 @@ body {
     font-size: 57px;
   }
   
+  mark {
+    background-color: hsl(0, 0%, 100%);
+    color: black;
+  }
