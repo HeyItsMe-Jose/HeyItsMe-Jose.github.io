@@ -1,0 +1,20 @@
+//Glitch IDM drill-'n'-bass in SuperCollider//
+                //SynthDef//
+
+(
+SynthDef(\kick, {
+	var snd;
+	snd = SinOsc.ar(Env.perc(0.001, 0.3, curve: -8).ar.linexp(0, 1, 60, 500));
+	snd = snd + (SinOsc.ar(Env.perc(0.0, 0, 0.01).ar.linexp(0, 1, 1000, 8000)) * Env.perc(0.001, 0.01).ar);
+	snd = snd + (BPF.ar(Hasher.ar(Sweep.ar), 6000, 0.1) * Env.perc(0.01, 0.03).ar * 2.dbamp);
+	snd = snd * (1 + Env.perc(0.01, 0.3).ar);
+	snd = snd.tanh;
+	snd = snd + (Latch.ar(snd, Impulse.ar(8000)) * -6.dbamp);
+	snd = snd * Env.perc(0.001, 0.5).ar(Done.freeSelf);
+	snd = snd * -5.dbamp;
+	snd = Pan2.ar(snd, \pan.kr(0));
+	Out.ar(\out.kr(0), snd);
+}).add;
+)
+
+Synth(\kick);
