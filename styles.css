@@ -1,13 +1,61 @@
+@font-face {
+  font-family: 'Scrap';
+  src: url(Scrap-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
     background-color: rgb(59, 59, 124);
     background-clip: content-box; 
   }
   
   h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Scrap', Arial, Helvetica, sans-serif;
+    font-size: 75px;
     color: white;
     text-align: center;
   }
+
+  h2 {
+    font-family: 'Scrap', Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 75px;
+    color:firebrick
+  }
+
+  h3 {
+    font-family: 'Scrap', Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-size: 75px;
+    color:firebrick
+  }
+
+  .shape-box {
+  float: left; /* Essential for shape-outside to work */
+  width: 150px;
+  height: 2px;
+  background-color: #ffffff; /* For visualization */
+  border-radius: 50%; /* Makes the visible element a circle */
+  shape-outside: circle(50%); /* Defines the text wrap boundary as a circle */
+  shape-margin: 50px; /* Adds space around the circle */
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(156, 60, 60)
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
 
   h6 {
     color: white;
@@ -35,3 +83,11 @@ body {
     bottom: 0;
     z-index: -1;
   }
+
+  button {
+    font-family: 'Scrap', Arial, Helvetica, sans-serif
+    
+  }
+
+  
+
