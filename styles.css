@@ -54,7 +54,6 @@ a:hover {
 a:active {
   color: yellow;
   background-color: transparent;
-  text-decoration: underline;
 }
 
   h6 {
@@ -91,3 +90,38 @@ a:active {
 
   
 
+.bounce-text span {
+  display: inline-block;
+  animation: bounce 10.8s infinite;
+}
+
+/* Add a delay for each letter using nth-child */
+.bounce-text span:nth-child(1)  { animation-delay: 0s; }
+.bounce-text span:nth-child(2)  { animation-delay: 0.2s; }
+.bounce-text span:nth-child(3)  { animation-delay: 0.4s; }
+.bounce-text span:nth-child(4)  { animation-delay: 0.6s; }
+.bounce-text span:nth-child(5)  { animation-delay: 0.8s; }
+.bounce-text span:nth-child(6)  { animation-delay: 1.0s; }
+.bounce-text span:nth-child(7)  { animation-delay: 1.2s; }
+.bounce-text span:nth-child(8)  { animation-delay: 1.4s; }
+.bounce-text span:nth-child(9)  { animation-delay: 1.6s; }
+.bounce-text span:nth-child(10) { animation-delay: 1.8s; }
+.bounce-text span:nth-child(11) { animation-delay: 2.0s; }
+.bounce-text span:nth-child(12) { animation-delay: 2.2s; }
+.bounce-text span:nth-child(13) { animation-delay: 2.4s; }
+.bounce-text span:nth-child(14) { animation-delay: 2.6s; }
+.bounce-text span:nth-child(15) { animation-delay: 2.8s; }
+.bounce-text span:nth-child(16) { animation-delay: 3.0s; }
+.bounce-text span:nth-child(17) { animation-delay: 3.2s; }
+.bounce-text span:nth-child(18) { animation-delay: 3.4s; }
+.bounce-text span:nth-child(19) { animation-delay: 3.6s; }
+
+/* Keyframes for bouncing effect */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  10% { transform: translateY(-2px); }
+  20% { transform: translateY(-4px); }
+  30% { transform: translateY(-6px); }
+  40% { transform: translateY(-8px); }
+  50% { transform: translateY(-20px); } /* move up */
+}
