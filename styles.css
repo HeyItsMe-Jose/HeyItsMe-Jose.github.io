@@ -57,10 +57,31 @@ a:active {
 }
 
   h6 {
+    font-family: 'Scrap', Arial, Helvetica, sans-serif;
     color: white;
     text-align: left;
   }
   
+#musicDisplay {
+  position: fixed;      /* fixes it relative to the viewport */
+  bottom: 0;            /* stick to the bottom */
+  left: 0;              /* align to the left */
+  width: 100%;          /* full width of the page */
+  background-color: #222; /* dark background */
+  color: white;         /* text color */
+  padding: 0px 0px;   /* spacing inside the bar */
+  font-size: 35px;
+  display: flex;        /* allow horizontal alignment */
+  justify-content: space-between; /* space between audio and text */
+  align-items: center;  /* vertically center items */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* subtle shadow on top */
+  z-index: 1000;        /* make sure it stays on top */
+}
+
+div {
+  font-family: 'Scrap', Arial, Helvetica, sans-serif;
+}
+
   p {
     font-family: 'Courier New', Courier, monospace;
     font-size: 57px;

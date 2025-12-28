@@ -45,6 +45,8 @@
   }
 </style>
 
+
+<!--
 <div class="shape-box">
   <h2>
     <a href="">Music</a>
@@ -55,13 +57,55 @@
     </div>
   </h2>
 </div>
+-->
 
-<audio src="121 --: : Tartamudo.mp3" autoplay loop></audio>
+<div class="shape-box">
+  <h2>
+    <a href="#" id="startMusicLink">Music</a>
+    <audio id="audioPlayer" src="121 --: : Tartamudo.mp3" loop></audio>
+  </h2>
+</div>
+
+<div id="musicDisplay", class="color-change">
+  <audio id="audioPlayer"></audio>
+  <div><span id="trackName">---</span></div>
+</div>
 
 <style>
-audio {
-  display: none; /* hides the player completely */
+  .color-change {
+  animation: changeColor 10s infinite alternate;
 }
+
+@keyframes changeColor {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: green; }
+}
+</style>
+
+<script>
+const tracks = [
+  '121 --: : Tartamudo.mp3',
+  '113.2 - NESPPA.wav',
+];
+
+let currentTrack = 0;
+
+const audio = document.getElementById('audioPlayer');
+const link = document.getElementById('startMusicLink');
+const trackName = document.getElementById('trackName');
+
+link.addEventListener('click', (e) => {
+  e.preventDefault(); // prevent page jump
+  audio.src = tracks[currentTrack]; // load the current track
+  audio.play();                      // play it
+  trackName.textContent = tracks[currentTrack];
+  // Move to the next track for the next click
+  currentTrack = (currentTrack + 1) % tracks.length; // loops back to start
+});
+
+</script>
+
 </style>
 
 
